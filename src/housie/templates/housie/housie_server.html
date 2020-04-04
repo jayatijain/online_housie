@@ -1,0 +1,64 @@
+{% extends "housie/header.html" %} {% block content %}
+
+<head>
+    <title>HOUSIE! (server)</title>
+    <style type="text/css">
+        .well {
+            background-color: white;
+        }
+
+
+    </style>
+</head>
+<script language="javascript">
+	next_number_interval = setInterval(click, 5000);
+
+	function pause_next_number() {
+		clearInterval(next_number_interval);
+	}
+
+	function click() {
+		$("#btn_next_number").click();
+	}
+
+
+</script>
+<!-- <meta http-equiv="refresh" content="5"> -->
+<div class="container jumbotron">
+    <h1>HOUSIE!</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-11">
+            <button aria-controls="collapseExample" aria-expanded="false" class="btn btn-primary" data-toggle="collapse"
+                    href="#collapseExample" type="button">SHOW ALL <span class="badge">{{server_numbers|length}}</span>
+            </button>
+        </div>
+        <div class="col-lg-1 pull-right">
+            <form action="/reset/" method="GET">
+                <button class="btn btn-danger pull-right" type="button submit">RESTART</button>
+            </form>
+        </div>
+    </div>
+    <form action="/server/" method="POST">
+        {% csrf_token %}
+        <div align="center" class="collapse well" id="collapseExample">
+            <div class="card card-body">
+                <legend>Already covered numbers</legend>
+                <h3>{{server_numbers}}</h3>
+            </div>
+        </div>
+        <div align="center" class="well">
+            <legend>Next number</legend>
+            <h1>{{next_number}}</h1>
+        </div>
+        <div>
+            <button class="btn btn-success" id="btn_next_number" type="button submit">NEXT NUMBER</button>
+        </div>
+        <div>
+            <button class="btn btn-info" id="btn_pause_next_number" onclick="pause_next_number()" type="button">PAUSE
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

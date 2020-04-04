@@ -1,0 +1,84 @@
+{% extends "housie/header.html" %} {% block content %}
+
+<title>HOUSIE!</title>
+<style>
+body {
+    padding-top: 65px;
+}
+
+
+
+</style>
+<script>
+function cell_clicked(cell_name) {
+    if (document.getElementById(cell_name).bgColor == "yellow")
+        document.getElementById(cell_name).bgColor = "white";
+    else
+        document.getElementById(cell_name).bgColor = "yellow";
+}
+
+
+
+</script>
+<div class="container">
+    <div class="card mb-12">
+        <div class="card-header">Click on a number to select/deselect.</div>
+        <div class="card-body">
+            <h1 class="card-title">Housie</h1>
+        </div>
+        <table class="table table-borded">
+            <tr>
+                <td align="center" id="{{numbers.0}}" onclick="cell_clicked('{{numbers.0}}');">
+                    <h3>{{numbers.0}}</h3>
+                </td>
+                <td align="center" id="{{numbers.1}}" onclick="cell_clicked('{{numbers.1}}');">
+                    <h3>{{numbers.1}}</h3>
+                </td>
+                <td align="center" id="{{numbers.2}}" onclick="cell_clicked('{{numbers.2}}');">
+                    <h3>{{numbers.2}}</h3>
+                </td>
+                <td align="center" id="{{numbers.3}}" onclick="cell_clicked('{{numbers.3}}');">
+                    <h3>{{numbers.3}}</h3>
+                </td>
+                <td align="center" id="{{numbers.4}}" onclick="cell_clicked('{{numbers.4}}');">
+                    <h3>{{numbers.4}}</h3>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" id="{{numbers.5}}" onclick="cell_clicked('{{numbers.5}}');">
+                    <h3>{{numbers.5}}</h3>
+                </td>
+                <td align="center" id="{{numbers.6}}" onclick="cell_clicked('{{numbers.6}}');">
+                    <h3>{{numbers.6}}</h3>
+                </td>
+                <td align="center" id="{{numbers.7}}" onclick="cell_clicked('{{numbers.7}}');">
+                    <h3>{{numbers.7}}</h3>
+                </td>
+                <td align="center" id="{{numbers.8}}" onclick="cell_clicked('{{numbers.8}}');">
+                    <h3>{{numbers.8}}</h3>
+                </td>
+                <td align="center" id="{{numbers.9}}" onclick="cell_clicked('{{numbers.9}}');">
+                    <h3>{{numbers.9}}</h3>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" id="{{numbers.10}}" onclick="cell_clicked('{{numbers.10}}');">
+                    <h3>{{numbers.10}}</h3>
+                </td>
+                <td align="center" id="{{numbers.11}}" onclick="cell_clicked('{{numbers.11}}');">
+                    <h3>{{numbers.11}}</h3>
+                </td>
+                <td align="center" id="{{numbers.12}}" onclick="cell_clicked('{{numbers.12}}');">
+                    <h3>{{numbers.12}}</h3>
+                </td>
+                <td align="center" id="{{numbers.13}}" onclick="cell_clicked('{{numbers.13}}');">
+                    <h3>{{numbers.13}}</h3>
+                </td>
+                <td align="center" id="{{numbers.14}}" onclick="cell_clicked('{{numbers.14}}');">
+                    <h3>{{numbers.14}}</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}
